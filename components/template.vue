@@ -1,37 +1,116 @@
 <template>
-  <div>
+  <div class="max-w-[1920px] mx-auto">
     <!-- Top-bar -->
     <div class="pl-10 py-6 border-[#1A202C] border-b-2">
       <button
-        class=" text-base font-bold text-white cursor-pointer px-10 py-3 rounded-tl-[11px] rounded-tr-[20px] rounded-br-[6px] rounded-bl-[33px] bg-[#2D3648] "
+        class="text-base font-bold text-white cursor-pointer px-10 py-3 rounded-tl-[11px] rounded-tr-[20px] rounded-br-[6px] rounded-bl-[33px] bg-[#2D3648]"
       >
         Logo
       </button>
     </div>
+
     <!-- Side-bar -->
     <div class="flex">
-    <div class="max-w-[260px] w-full h-[884px] text-[#717D96] bg-[#EDF0F7] border-[#1A202C] border-r-2 py-6">
-      <div class="flex items-center py-3 pl-10 gap-2.5">
-        <img src="/images/icon-placeholder.png" alt="" />
-        <p class="text-sm leading-6 font-medium">Products</p>
+      <div
+        class="max-w-[260px] w-full h-[833px] text-[#717D96] bg-[#EDF0F7] border-[#1A202C] border-r-2 py-6"
+      >
+        <div class="flex items-center py-3 pl-10 gap-2.5 cursor-pointer">
+          <img src="/images/icon-placeholder.png" alt="" />
+          <p class="text-sm leading-6 font-medium">Products</p>
+        </div>
+        <div
+          @click="isSettingsOpen = !isSettingsOpen"
+          class="flex items-center py-3 hover:bg-[#E2E7F0] pl-10 gap-[10px] hover:text-[#2D3648] cursor-pointer"
+        >
+          <img src="/images/icon-placeholder.png" alt="" />
+          <p class="text-sm leading-6 font-medium">Settings</p>
+          <i class="fa"></i>
+        </div>
+        <div v-if="isSettingsOpen" class="flip-in-hor-bottom">
+          <p
+            class="hover:bg-[#D4D8DF] py-2 leading-6 text-sm font-medium pl-[67px] cursor-pointer"
+          >
+            Categories
+          </p>
+          <p
+            class="hover:bg-[#D4D8DF] py-2 leading-6 text-sm font-medium pl-[67px] cursor-pointer"
+          >
+            Product Type
+          </p>
+          <p
+            class="hover:bg-[#D4D8DF] py-2 leading-6 text-sm font-medium pl-[67px] cursor-pointer"
+          >
+            Product Size
+          </p>
+          <p
+            class="hover:bg-[#D4D8DF] py-2 leading-6 text-sm font-medium pl-[67px] cursor-pointer"
+          >
+            Attributes
+          </p>
+        </div>
       </div>
-      <div class="flex items-center py-3 hover:bg-[#E2E7F0] pl-10 gap-[10px] hover:text-[#2D3648]">
-        <img src="/images/icon-placeholder.png" alt="" />
-        <p class="text-sm leading-6 font-medium  ">Settings</p>
+
+      <!-- Heading -->
+      <div class="w-full">
+        <div>
+          <p
+            class="text-[32px] font-bold leading-[41.6px] border-b-2 py-8 pl-[67px] border-[#1A202C] text-[#2D3648]"
+          >
+            Categories
+          </p>
+        </div>
+
+        <!-- Content -->
+        <div class="flex items-end gap-4">
+        <div class="pl-[67px] pt-[37px] max-w-[452px] w-full">
+          <p class="text-base font-medium text-gray-800 leading-4 mb-6">
+            Categories
+          </p>
+          <div class="w-full flex flex-col gap-8">
+            <input
+              type="text"
+              placeholder="Print Only"
+              class="text-sm font-normal max-h-[46px] leading-[14px] w-full border rounded-[4px] py-4 pl-4 border-gray-300 hover:border-gray-400"
+            />
+            <div class="flex items-center gap-[13px]">
+              <input
+                type="text"
+                placeholder="Print and Mail"
+                class="text-sm font-normal max-h-[46px] leading-[14px] w-full border rounded-[4px] py-4 pl-4 border-gray-300 hover:border-gray-400"
+              />
+            
+            </div>
+            <input
+              type="text"
+              placeholder="Electronic"
+              class="text-sm font-normal max-h-[46px] leading-[14px] w-full border rounded-[4px] py-4 pl-4 border-gray-300 hover:border-gray-400"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col gap-10 mb-1">
+          <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="18.5" cy="18.5" r="18.5" fill="#F0F0F0"/>
+<path d="M24.25 22.25L13.75 11.75" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24.25 11.75L13.75 22.25" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="18.5" cy="18.5" r="18.5" fill="#F0F0F0"/>
+<path d="M24.25 22.25L13.75 11.75" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24.25 11.75L13.75 22.25" stroke="#1E293B" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+        </div>
       </div>
-      <div class="">
-        <p class="hover:bg-[#D4D8DF] py-2 leading-6 text-sm font-medium pl-[67px]">Categories</p>
-        <p class="hover:bg-[#D4D8DF] py-2 leading-6 text-sm font-medium pl-[67px]">Product Type</p>
-        <p class="hover:bg-[#D4D8DF] py-2 leading-6 text-sm font-medium pl-[67px]">Product Size</p>
-        <p class="hover:bg-[#D4D8DF] py-2 leading-6 text-sm font-medium pl-[67px]">Attributes</p>
+
+
       </div>
     </div>
-    <!-- Heading -->
-    <div class="w-full">
-<p class="text-[32px] font-bold leading-[41.6px] border-b-2 py-8 pl-[67px] border-[#1A202C] text-[#2D3648]">
-    Categories
-</p>
-    </div>
-</div>
   </div>
 </template>
+
+<script setup>
+import { ref } from "vue";
+
+const isSettingsOpen = ref(false);
+console.log(isSettingsOpen.value, "ksf");
+</script>
